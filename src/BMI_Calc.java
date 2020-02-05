@@ -6,6 +6,7 @@ public class BMI_Calc {
 		
 		Scanner in = new Scanner(System.in);
 		
+		//variables
 		double feet;
 		double inches;
 		double pounds;
@@ -13,22 +14,31 @@ public class BMI_Calc {
 		double meters;
 		double kg;
 		
+		// This prompts the user for the height
 		System.out.println("What is your height in #1) feet and #2) inches?");
 		System.out.println("-----------------------------------------------");
 		
+		//asks for feet
 		System.out.println("1) Feet");
 		feet = in.nextDouble();
 		
+		//asks for the inches left over
 		System.out.println("2) Remaining Inches");
 		inches = in.nextDouble();
 		
+		//asks for weight
 		System.out.println("What is your weight in pounds?");
 		pounds = in.nextDouble();
 		
+		//metric conversions
 		meters = ((feet + (inches / 12)) * 0.3048);
 		kg = pounds / 2.205;
+		
+		//bmi calculation
 		bmi = kg / (meters * meters);
 		
+		
+		// if/else to give different answers based on the bmi calculated
 		if (0 < bmi && bmi < 19) {
 			
 			System.out.println("Your BMI is " +String.format("%.1f", bmi)+ ". This is classified as underweight.");	
